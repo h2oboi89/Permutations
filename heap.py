@@ -22,13 +22,14 @@ def permute(value):
         for c in value:
             values.append(c)
 
-        return ''.join(_generate(values))
-
     elif type(value) is int:
         for c in str(value):
             values.append(c)
 
-        return int(''.join(_generate(values)))
-
     elif type(value) is list:
-        return _generate(value)
+        values = value
+
+    else:
+        return None
+
+    return _generate(values)
